@@ -1,11 +1,12 @@
-import React from "react";
-import { RouterProvider } from 'react-router-dom';
-import root from './router/root';
-import './App.css';
+import "./App.css";
+import LoginPage from "./pages/LoginPage";
+
 function App() {
-    return (
-        <RouterProvider router={root}/>
-    );
+  return (
+    <div className="App">
+      <LoginPage />
+    </div>
+  );
 }
 
 export default App;
