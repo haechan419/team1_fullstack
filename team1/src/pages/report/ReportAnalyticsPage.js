@@ -1,7 +1,7 @@
 import {useEffect, useMemo, useState} from "react";
-import AppLayout from "../components/layout/AppLayout";
-import "../styles/report.css";
-import {REPORT_TYPES} from "../constants/reportTypes";
+import AppLayout from "../../components/layout/AppLayout";
+import "../../styles/report.css";
+import {REPORT_TYPES} from "../../constants/reportTypes";
 
 export default function ReportAnalyticsPage() {
     // ✅ TODO: 나중에 로그인 유저 정보에서 role 받아오면 됨

@@ -8,9 +8,7 @@ const container = document.getElementById("root");
 const root = createRoot(container);
 
 root.render(
-    <React.StrictMode>
         <App />
-    </React.StrictMode>
 );
 // 성능 측정
 reportWebVitals();
