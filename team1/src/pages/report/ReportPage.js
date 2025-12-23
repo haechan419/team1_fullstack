@@ -1,6 +1,6 @@
 import React from "react";
-import AppLayout from "../components/layout/AppLayout";
-import "../styles/report.css"; // 방금 만든 CSS 연결
+import AppLayout from "../../components/layout/AppLayout";
+import "../../styles/report.css"; // 방금 만든 CSS 연결
 
 export default function ReportPage() {
     return (
