@@ -1,0 +1,310 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
+
+:root {
+    --bg: #f5f6fa; /* ✅ 배경을 아주 연한 회색으로 변경 (패널이 잘 보이게) */
+    --sidebar-bg: #0f1b3a;
+    --logo-bg: #424242;
+    --topbar-bg: #5c85ef;
+    --text-main: #111827;
+    --text-muted: rgba(0, 0, 0, 0.5);
+    --stroke: #e2e8f0;
+    --height-header: 70px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Pretendard", sans-serif;
+    background: var(--bg);
+    color: var(--text-main);
+    overflow: hidden;
+}
+
+.app-root {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* ================= Sidebar ================= */
+
+.sidebar {
+    width: 240px;
+    background: var(--sidebar-bg);
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.sidebar-logo {
+    height: var(--height-header);
+    background: var(--logo-bg);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.sidebar-nav {
+    flex: 1;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.nav-label {
+    font-size: 12px; /* 글자 크기 */
+    font-weight: 700; /* 굵게 */
+    color: #6c757d; /* 회색으로 죽여서 메뉴와 구분 */
+
+    /* 위치 및 여백 조정 */
+    margin-top: 20px; /* 위쪽 메뉴와 간격 벌리기 */
+    margin-bottom: 8px; /* 아래쪽 메뉴와 간격 */
+    padding-left: 30px; /* 메뉴 아이콘 라인에 맞춤 */
+
+    /* 구분선 추가 (핵심) */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* 얇은 선 긋기 */
+    padding-top: 20px; /* 선과 글자 사이 간격 */
+
+    text-transform: uppercase; /* 대문자로 변경 (영어일 경우 멋짐) */
+    letter-spacing: 1px; /* 자간 넓히기 */
+}
+
+.nav-item {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+}
+.nav-item.active {
+    color: #fff;
+    font-weight: 700;
+    border-left: 4px solid #fff;
+    padding-left: 26px;
+}
+
+.nav-icon-box {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    cursor: pointer;
+}
+.nav-icon-svg {
+    width: 24px;
+    height: 24px;
+    fill: rgba(255, 255, 255, 0.6);
+}
+.nav-icon-box.active .nav-icon-svg {
+    fill: #fff;
+}
+
+/* ================= Main Area ================= */
+.app-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.topbar {
+    height: var(--height-header);
+    background: var(--topbar-bg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* 그림자 추가 */
+    z-index: 10;
+}
+
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.avatar-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #fff;
+}
+.user-info {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.2;
+}
+.user-name {
+    font-size: 14px;
+    font-weight: 700;
+}
+.user-dept {
+    font-size: 12px;
+    opacity: 0.8;
+}
+.logout-btn {
+    background: #fff;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #333;
+    cursor: pointer;
+}
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 4px;
+}
+
+/* ================= Content Area (여백 핵심) ================= */
+.app-content {
+    flex: 1;
+    background: var(--bg);
+    overflow: auto;
+
+    /* 🚨 여기가 핵심입니다! 내용물에 숨통을 트여주는 여백 */
+    padding: 40px;
+}
+
+/* ================= Dashboard Styles (여기에 통합) ================= */
+
+/* 패널 공통 스타일 */
+.panel {
+    background: #fff;
+    border: 1px solid var(--stroke);
+    border-radius: 16px; /* 둥글게 */
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+/* 1. 상단 통계 카드 그리드 (가로 4개 배치) */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* ✅ 가로 4칸 강제 적용 */
+    gap: 24px; /* 카드 사이 간격 */
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+/* 통계 카드 내부 */
+.stat-card {
+    background: #fff;
+    border: 1px solid var(--stroke);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 150px;
+}
+
+.stat-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #64748b;
+    margin-bottom: 8px;
+}
+.stat-value {
+    font-size: 32px;
+    font-weight: 800;
+    color: #1e293b;
+    letter-spacing: -0.5px;
+}
+.stat-footer {
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: auto;
+}
+.trend-up {
+    color: #e11d48;
+}
+.trend-down {
+    color: #10b981;
+}
+.text-muted {
+    color: #94a3b8;
+    font-weight: 500;
+}
+
+/* 2. 하단 차트 영역 그리드 (가로 2개 배치 2:1 비율) */
+.dashboard-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* ✅ 차트 넓게, 목록 좁게 */
+    gap: 24px;
+    width: 100%;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #1e293b;
+}
+
+/* 테이블 */
+.dashboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+.dashboard-table th {
+    text-align: left;
+    font-size: 13px;
+    color: #64748b;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e2e8f0;
+}
+.dashboard-table td {
+    padding: 16px 0;
+    font-size: 14px;
+    font-weight: 600;
+    border-bottom: 1px solid #f1f5f9;
+    color: #334155;
+}
+
+/* 페이지 타이틀 */
+.page-meta {
+    color: #64748b;
+    font-weight: 700;
+    font-size: 13px;
+    margin-bottom: 6px;
+}
+.page-title {
+    margin: 0 0 30px 0;
+    font-size: 32px;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+/* 반응형 (화면 작아지면 세로로) */
+@media (max-width: 1200px) {
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+    } /* 2열로 변경 */
+}
