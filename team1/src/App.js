@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./store";
 import Layout from "./components/layout/Layout";
-import DashboardPage from "./pages/DashboardPage";
+import DashboardPage from "./pages/dashboard/DashboardPage";
 import ReadyPage from "./pages/ReadyPage";
 // 우리가 맡은 기능
 import FinanceListPage from "./pages/finance/FinanceListPage";
@@ -13,9 +13,12 @@ import ReceiptDetailPage from "./pages/finance/ReceiptDetailPage";
 import AdminExpenseApprovalPage from "./pages/admin/approval/AdminExpenseApprovalPage";
 import AdminExpenseApprovalDetailPage from "./pages/admin/approval/AdminExpenseApprovalDetailPage";
 import AdminAccountingPage from "./pages/admin/accounting/AdminAccountingPage";
+// master에서 추가된 페이지들
+import ShopPage from "./pages/shop/ShopPage";
+import RequestHistoryPage from "./pages/history/RequestHistoryPage";
 import "./App.css";
 
-function App() {
+export default function App() {
   return (
     <Provider store={store}>
       <Router>
@@ -33,7 +36,7 @@ function App() {
             />
 
             {/* 한해찬: 쇼핑몰 & 장바구니 */}
-            <Route path="/shop" element={<ReadyPage title="비품 쇼핑몰" />} />
+            <Route path="/shop" element={<ShopPage />} />
             <Route path="/cart" element={<ReadyPage title="장바구니" />} />
 
             {/* 성건우: 마이페이지 */}
@@ -50,6 +53,9 @@ function App() {
 
             {/* 문주연: 내 업무 */}
             <Route path="/tasks" element={<ReadyPage title="내 업무 보드" />} />
+
+            {/* 강진수: 내 결재함 (주문 내역 확인) - master에서 추가 */}
+            <Route path="/history" element={<RequestHistoryPage />} />
 
             {/* =================================
                 2. [ADMIN] 관리자 전용
@@ -110,5 +116,3 @@ function App() {
     </Provider>
   );
 }
-
-export default App;

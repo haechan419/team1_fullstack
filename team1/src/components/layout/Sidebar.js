@@ -19,6 +19,7 @@ const Sidebar = () => {
     { path: "/tasks", label: "업무보드", icon: "📁", available: true },
     { path: "/mypage", label: "마이페이지", icon: "👤", available: true },
     { path: "/expenses", label: "내 지출 내역", icon: "💰", available: true }, // 우리가 맡은 기능
+    { path: "/history", label: "구매 신청 내역", icon: "📂", available: true }, // master에서 추가
   ];
 
   // 관리자 메뉴 (별도 처리)
@@ -103,4 +104,3 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
-
