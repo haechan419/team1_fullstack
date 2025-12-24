@@ -4,6 +4,7 @@ import DashboardPage from "./pages/dashboard/DashboardPage";
 import ReadyPage from "./pages/ReadyPage";
 import ShopPage from "./pages/shop/ShopPage";
 import FloatingUI from "./components/common/FloatingUI";
+import LoginPage from "./pages/login/LoginPage"
 
 //내 결재함 페이지
 import RequestHistoryPage from "./pages/history/RequestHistoryPage";
@@ -18,8 +19,12 @@ export default function App() {
         {/* 장바구니 패널은 페이지(Routes)와 상관없이 언제든 열려야 함*/}
 
         <Routes>
+          {/*진입 시*/}
+          <Route path="/" element = {<LoginPage />}/>
           {/* 일반 사용자용 */}
-          <Route path="/" element={<DashboardPage />} />
+          <Route path="/dashboard" element={<DashboardPage />} />
+
+
 
           {/* 강진수 : 내 결재함 */}
           <Route

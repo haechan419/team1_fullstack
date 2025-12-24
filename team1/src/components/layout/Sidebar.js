@@ -40,8 +40,8 @@ export default function Sidebar() {
       <nav className="sidebar-nav">
         {/* 1. [공통] 메인 메뉴 */}
         <div
-          className={`nav-item ${location.pathname === "/" ? "active" : ""}`}
-          onClick={() => navigate("/")}
+          className={`nav-item ${location.pathname === "/dashboard" ? "active" : ""}`}
+          onClick={() => navigate("/dashboard")}
         >
           <span style={{ marginRight: "10px" }}>🏠</span> Home
         </div>
@@ -66,17 +66,18 @@ export default function Sidebar() {
           >
             <span style={{ marginRight: "10px" }}>🛒</span> 비품구매
           </div>
+        </div>
 
           {/* 하위: 구매 신청 내역 (들여쓰기 적용) */}
           <div
-            className={`nav-sub-item ${
+            className={`nav-item ${
               location.pathname === "/history" ? "active-sub" : ""
             }`}
             onClick={() => navigate("/history")}
           >
             <span style={{ marginRight: "8px" }}>└</span> 📂 구매 신청 내역
           </div>
-        </div>
+
         {/* ------------------------------------------------ */}
 
         <div
