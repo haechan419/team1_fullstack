@@ -1,5 +1,4 @@
 import React from "react";
-<<<<<<< HEAD
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import DashboardPage from "./pages/dashboard/DashboardPage";
 import ReadyPage from "./pages/ReadyPage";
@@ -85,15 +84,4 @@ export default function App() {
       </BrowserRouter>
     </CartProvider>
   );
-=======
-import { RouterProvider } from 'react-router-dom';
-import root from './router/root';
-import './App.css';
-function App() {
-    return (
-        <RouterProvider router={root}/>
-    );
->>>>>>> 97316a89ce41d9f321441590caf55a2d10333061
 }
-
-export default App;

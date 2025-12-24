@@ -1,14 +1,7 @@
-<<<<<<< HEAD:team1/src/pages/ReportAnalyticsPage.js
 import { useEffect, useMemo, useState } from "react";
 import AppLayout from "../components/layout/AppLayout";
 import "../styles/report.css";
 import { REPORT_TYPES } from "../constants/reportTypes";
-=======
-import {useEffect, useMemo, useState} from "react";
-import AppLayout from "../../components/layout/AppLayout";
-import "../../styles/report.css";
-import {REPORT_TYPES} from "../../constants/reportTypes";
->>>>>>> 97316a89ce41d9f321441590caf55a2d10333061:team1/src/pages/report/ReportAnalyticsPage.js
 
 export default function ReportAnalyticsPage() {
   // ✅ TODO: 나중에 로그인 유저 정보에서 role 받아오면 됨

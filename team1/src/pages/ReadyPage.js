@@ -1,7 +1,6 @@
 import React from "react";
 import AppLayout from "../components/layout/AppLayout";
 
-
 export default function ReadyPage({title}) {
     return (
         <AppLayout>
